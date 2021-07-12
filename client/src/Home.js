@@ -70,7 +70,6 @@ const Home = () => {
                     console.log(err);
                     if (err.response) {
                         c = 1;
-                        console.log('error');
                         alert(err.response.data.msg);
                     }
                     history.push('/login');
@@ -118,17 +117,17 @@ const Home = () => {
                     onClick={config.toggleVideo}
                     color={!config.videoCheck ? 'primary' : 'secondary'}
                 >
-                    {
-                        !config.videoCheck ? <VideocamIcon /> : <VideocamOffIcon />
-                    }
+                    {!config.videoCheck ? (
+                        <VideocamIcon />
+                    ) : (
+                        <VideocamOffIcon />
+                    )}
                 </Button>
                 <Button
                     onClick={config.toggleAudio}
                     color={!config.audioCheck ? 'primary' : 'secondary'}
                 >
-                    {
-                        !config.audioCheck ? <MicIcon /> : <MicOffIcon />
-                    }
+                    {!config.audioCheck ? <MicIcon /> : <MicOffIcon />}
                 </Button>
             </div>
             <Sidebar>

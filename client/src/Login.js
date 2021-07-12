@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles((theme) => ({
-    heading:{
+    heading: {
         color: '#ffffff',
         fontWeight: '600',
         fontSize: '3rem',
@@ -41,11 +41,11 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         marginTop: theme.spacing(1),
     },
-    input:{
+    input: {
         color: '#fff',
         borderBottom: '1px solid #6264a7',
     },
-    inputLabel:{
+    inputLabel: {
         color: '#9ea2ff',
     },
     submit: {
@@ -108,7 +108,11 @@ export default function Login() {
                     <Avatar className={classes.avatar}>
                         <LockOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5" className={classes.heading}>
+                    <Typography
+                        component="h1"
+                        variant="h5"
+                        className={classes.heading}
+                    >
                         Login
                     </Typography>
                     <form className={classes.form} noValidate>
@@ -129,7 +133,7 @@ export default function Login() {
                                 className: classes.input,
                             }}
                             InputLabelProps={{
-                                className: classes.inputLabel
+                                className: classes.inputLabel,
                             }}
                         />
                         <TextField
@@ -149,7 +153,7 @@ export default function Login() {
                                 className: classes.input,
                             }}
                             InputLabelProps={{
-                                className: classes.inputLabel
+                                className: classes.inputLabel,
                             }}
                         />
                         <Button
@@ -160,16 +164,16 @@ export default function Login() {
                             className={classes.submit}
                             onClick={loginUser}
                         >
-                           LOGIN
+                            LOGIN
                         </Button>
                         <Grid container>
                             <Grid item>
                                 <Link
                                     variant="body2"
                                     onClick={goToRegister}
-                                    style={{ 
+                                    style={{
                                         cursor: 'pointer',
-                                        color: '#599aba' ,
+                                        color: '#599aba',
                                         textDecoration: 'none',
                                     }}
                                 >

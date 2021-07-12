@@ -3,7 +3,6 @@ import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
 
 const socket = io('http://localhost:8000');
-console.log(socket);
 
 const ContextConfig = createContext();
 
@@ -56,10 +55,9 @@ const ContextProvider = ({ children }) => {
     const hangUpCall = () => {
         setAcceptCall(false);
         window.location.reload();
-    }
+    };
 
     const callUser = (id) => {
-        console.log("name: "+name);
         const peer = new Peer({ initiator: true, trickle: false, stream });
 
         peer.on('signal', (data) => {

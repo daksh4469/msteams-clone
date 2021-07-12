@@ -6,9 +6,9 @@ const server = require('http').createServer(app);
 const PORT = process.env.PORT || 8000;
 const jwt = require('jsonwebtoken');
 app.use(express.json());
-require("dotenv").config();
+require('dotenv').config();
 
-const path = require("path");
+const path = require('path');
 
 const io = require('socket.io')(server, {
     cors: {
@@ -62,9 +62,9 @@ app.post('/login', (req, res) => {
     });
 });
 
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+app.use(express.static(path.resolve(__dirname, './client/build')));
+app.get('*', function (request, response) {
+    response.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
 server.listen(PORT, () => {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-require("dotenv").config();
+require('dotenv').config();
 
 const authenticateToken = require('../../middleware/authenticate');
 

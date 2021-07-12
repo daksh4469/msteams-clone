@@ -4,14 +4,14 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';import Typography from '@material-ui/core/Typography';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import axios from 'axios';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
 
 const theme = createMuiTheme({
     typography: {
@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles((theme) => ({
-    heading:{
+    heading: {
         color: '#ffffff',
         fontWeight: '600',
         fontSize: '3rem',
@@ -41,11 +41,11 @@ const useStyles = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
         marginTop: theme.spacing(1),
     },
-    input:{
+    input: {
         color: '#fff',
         borderBottom: '1px solid #6264a7',
     },
-    inputLabel:{
+    inputLabel: {
         color: '#9ea2ff',
     },
     submit: {
@@ -106,104 +106,108 @@ export default function Register() {
 
     return (
         <MuiThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
-            <CssBaseline />
-            <div className={classes.paper}>
-                <Avatar className={classes.avatar}>
-                    <AssignmentTurnedInIcon />
-                </Avatar>
-                <Typography component="h1" variant="h5" className={classes.heading}>
-                    Sign in
-                </Typography>
-                <form className={classes.form} noValidate>
-                    <TextField
-                        value={name}
-                        onChange={handleName}
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="name"
-                        label="Your Name"
-                        name="name"
-                        autoFocus
-                        color="secondary"
-                        className={classes.textField}
-                        InputProps={{
-                            className: classes.input,
-                        }}
-                        InputLabelProps={{
-                            className: classes.inputLabel
-                        }}
-                    />
-                    <TextField
-                        value={email}
-                        onChange={handleEmail}
-                        margin="normal"
-                        required
-                        fullWidth
-                        id="email"
-                        label="Email Address"
-                        name="email"
-                        autoComplete="email"
-                        autoFocus
-                        color="secondary"
-                        className={classes.textField}
-                        InputProps={{
-                            className: classes.input,
-                        }}
-                        InputLabelProps={{
-                            className: classes.inputLabel
-                        }}
-                    />
-                    <TextField
-                        value={password}
-                        onChange={handlePassword}
-                        margin="normal"
-                        required
-                        fullWidth
-                        name="password"
-                        label="Password"
-                        type="password"
-                        id="password"
-                        autoComplete="current-password"
-                        color="secondary"
-                        className={classes.textField}
-                        InputProps={{
-                            className: classes.input,
-                        }}
-                        InputLabelProps={{
-                            className: classes.inputLabel
-                        }}
-                    />
-
-                    <Button
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-                        color="primary"
-                        className={classes.submit}
-                        onClick={registerUser}
+            <Container component="main" maxWidth="xs">
+                <CssBaseline />
+                <div className={classes.paper}>
+                    <Avatar className={classes.avatar}>
+                        <AssignmentTurnedInIcon />
+                    </Avatar>
+                    <Typography
+                        component="h1"
+                        variant="h5"
+                        className={classes.heading}
                     >
-                        Sign In
-                    </Button>
-                    <Grid container>
-                        <Grid item>
-                            <Link
-                                variant="body2"
-                                onClick={goToLogin}
-                                style={{ 
-                                    cursor: 'pointer',
-                                    color: '#599aba' ,
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                {'Already have an account? Login'}
-                            </Link>
+                        Sign in
+                    </Typography>
+                    <form className={classes.form} noValidate>
+                        <TextField
+                            value={name}
+                            onChange={handleName}
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="name"
+                            label="Your Name"
+                            name="name"
+                            autoFocus
+                            color="secondary"
+                            className={classes.textField}
+                            InputProps={{
+                                className: classes.input,
+                            }}
+                            InputLabelProps={{
+                                className: classes.inputLabel,
+                            }}
+                        />
+                        <TextField
+                            value={email}
+                            onChange={handleEmail}
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="email"
+                            label="Email Address"
+                            name="email"
+                            autoComplete="email"
+                            autoFocus
+                            color="secondary"
+                            className={classes.textField}
+                            InputProps={{
+                                className: classes.input,
+                            }}
+                            InputLabelProps={{
+                                className: classes.inputLabel,
+                            }}
+                        />
+                        <TextField
+                            value={password}
+                            onChange={handlePassword}
+                            margin="normal"
+                            required
+                            fullWidth
+                            name="password"
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                            color="secondary"
+                            className={classes.textField}
+                            InputProps={{
+                                className: classes.input,
+                            }}
+                            InputLabelProps={{
+                                className: classes.inputLabel,
+                            }}
+                        />
+
+                        <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            color="primary"
+                            className={classes.submit}
+                            onClick={registerUser}
+                        >
+                            Sign In
+                        </Button>
+                        <Grid container>
+                            <Grid item>
+                                <Link
+                                    variant="body2"
+                                    onClick={goToLogin}
+                                    style={{
+                                        cursor: 'pointer',
+                                        color: '#599aba',
+                                        textDecoration: 'none',
+                                    }}
+                                >
+                                    {'Already have an account? Login'}
+                                </Link>
+                            </Grid>
                         </Grid>
-                    </Grid>
-                </form>
-            </div>
-        </Container>
+                    </form>
+                </div>
+            </Container>
         </MuiThemeProvider>
     );
 }

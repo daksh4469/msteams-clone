@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-require("dotenv").config();
+require('dotenv').config();
 const md5 = require('md5');
 
 const User = require('../../models/User');
@@ -34,7 +34,6 @@ router.post('/', (req, res) => {
         newUser
             .save()
             .then((user) => {
-                console.log(process.env.JWTSECRET);
                 jwt.sign(
                     { id: user.id },
                     process.env.JWTSECRET,
